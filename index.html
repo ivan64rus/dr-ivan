@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Др у Ивана!!!!</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,9 @@
             background-size: cover;
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            padding: 60px 20px;
+            padding: 30px 15px;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         body.modal-open {
@@ -47,56 +48,68 @@
         /* --- ШАПКА --- */
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         header h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-shadow: 0 4px 12px rgba(0,0,0,0.7);
         }
 
+        /* АДАПТИВНЫЙ ТАЙМЕР */
         .countdown-box {
             display: inline-flex;
-            gap: 20px;
+            gap: 12px;
             background: rgba(0, 0, 0, 0.5);
-            padding: 12px 25px;
+            padding: 10px 18px;
             border-radius: 30px;
             border: 1px solid var(--border-color);
             margin-bottom: 25px;
             backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 45px;
         }
 
         .countdown-num {
             font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent);
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .countdown-dot {
             font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: rgba(255,255,255,0.1);
             line-height: 1;
+            padding-bottom: 12px;
         }
 
         .countdown-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         .speech {
             color: #94a3b8;
             max-width: 650px;
             margin: 0 auto;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.6;
             text-align: center;
+            padding: 0 5px;
         }
 
         .wishlist-title {
@@ -105,7 +118,7 @@
             font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin: 50px 0;
+            margin: 40px 0 20px 0;
             color: #475569;
         }
 
@@ -166,7 +179,7 @@
             line-height: 1.3;
         }
 
-        /* --- КООРДИНАТЫ СЕТКИ --- */
+        /* --- КООРДИНАТЫ ДЛЯ ПК --- */
         .item-fen { left: 3%; top: 2%; width: 250px; }
         .item-nixie { left: 10%; top: 35%; width: 250px; }
         .item-sport { left: 4%; top: 68%; width: 260px; }
@@ -197,7 +210,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.4s ease;
-            padding: 20px;
+            padding: 16px;
         }
 
         .overlay.active {
@@ -208,17 +221,17 @@
         .modal-card {
             background: #131722;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 32px;
+            border-radius: 28px;
             width: 100%;
-            max-width: 550px;
-            padding: 24px;
+            max-width: 500px;
+            padding: 20px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
             position: relative;
             transform: scale(0.9) translateY(20px);
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
             flex-direction: column;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
         }
 
@@ -228,7 +241,7 @@
 
         .close-btn {
             position: absolute;
-            top: 20px; right: 20px; width: 36px; height: 36px;
+            top: 15px; right: 15px; width: 36px; height: 36px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%; color: #fff; font-size: 20px;
@@ -238,105 +251,100 @@
         .close-btn:hover { background: #ef4444; border-color: #ef4444; }
 
         .modal-img {
-            width: 100%; max-height: 260px; object-fit: cover;
-            border-radius: 20px; margin-bottom: 20px;
+            width: 100%; max-height: 220px; object-fit: cover;
+            border-radius: 16px; margin-bottom: 16px;
         }
 
         .modal-title {
-            font-family: 'Oswald', sans-serif; font-size: 1.8rem;
-            text-transform: uppercase; margin-bottom: 8px; color: #fff;
+            font-family: 'Oswald', sans-serif; font-size: 1.6rem;
+            text-transform: uppercase; margin-bottom: 6px; color: #fff;
         }
 
         .modal-subtext {
-            color: #38bdf8; font-size: 1.1rem; font-weight: 500; margin-bottom: 25px;
+            color: #38bdf8; font-size: 1rem; font-weight: 500; margin-bottom: 20px;
             line-height: 1.4;
         }
 
         .market-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .market-tile {
-            display: flex; align-items: center; gap: 15px; padding: 14px;
-            border-radius: 16px; text-decoration: none; font-weight: 600;
-            font-size: 1rem; color: #fff; transition: transform 0.2s, box-shadow 0.2s;
+            display: flex; align-items: center; gap: 12px; padding: 12px;
+            border-radius: 14px; text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; color: #fff; transition: transform 0.2s;
         }
         .market-tile:hover { transform: translateY(-2px); }
 
-        .tile-yandex { background: #fc3f1d; box-shadow: 0 4px 15px rgba(252, 63, 29, 0.25); }
-        .tile-ozon { background: #005bff; box-shadow: 0 4px 15px rgba(0, 91, 255, 0.25); }
-        .tile-wb { background: linear-gradient(135deg, #a100ff 0%, #cb00ff 100%); box-shadow: 0 4px 15px rgba(203, 0, 255, 0.25); }
-        .tile-avito { background: #00aa34; box-shadow: 0 4px 15px rgba(0, 170, 52, 0.25); }
+        .tile-yandex { background: #fc3f1d; }
+        .tile-ozon { background: #005bff; }
+        .tile-wb { background: linear-gradient(135deg, #a100ff 0%, #cb00ff 100%); }
+        .tile-avito { background: #00aa34; }
 
         .market-logo {
             font-family: 'Oswald', sans-serif; font-weight: 700;
-            background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 6px; font-size: 0.85rem;
+            background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 6px; font-size: 0.8rem;
         }
 
         .avito-note {
-            margin-top: 8px;
-            padding: 12px 16px;
+            margin-top: 6px;
+            padding: 10px 14px;
             background: rgba(0, 170, 52, 0.05);
             border: 1px dashed rgba(0, 170, 52, 0.2);
-            border-radius: 14px;
+            border-radius: 12px;
             color: #f1f5f9;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.4;
-            text-align: center;
         }
 
-        /* --- СТИЛИ СЛОЖНЫХ КОНСТРУКТОРОВ --- */
         .custom-step {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 16px;
-            margin-bottom: 15px;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 12px;
         }
         .custom-step-title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #fff;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         .custom-step-title span {
             background: var(--accent);
             color: #0f1319;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 1px 7px;
-            border-radius: 6px;
+            padding: 1px 6px;
+            border-radius: 5px;
         }
         .custom-buttons-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         .custom-or-divider {
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin: 2px 0;
         }
         .custom-inner-btn {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 12px; border-radius: 12px; color: #fff; text-decoration: none;
-            font-size: 0.9rem; font-weight: 600; transition: opacity 0.2s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 10px; border-radius: 10px; color: #fff; text-decoration: none;
+            font-size: 0.85rem; font-weight: 600;
         }
-        .custom-inner-btn:hover { opacity: 0.85; }
 
-        /* --- ПОДВАЛ (ФУТЕР) --- */
+        /* --- ПОДВАЛ --- */
         footer {
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 20px; margin-top: 60px;
+            padding: 30px 10px; margin-top: 40px;
         }
         
         .footer-content {
@@ -345,41 +353,28 @@
             justify-content: space-between;
             max-width: 950px;
             margin: 0 auto;
-            text-align: left;
-            gap: 40px;
+            gap: 30px;
         }
 
         .speech-footer {
             color: #94a3b8; 
-            font-size: 1.05rem; 
+            font-size: 1rem; 
             line-height: 1.6;
-            margin-top: 0;
-            text-align: left;
             flex: 1;
         }
 
-        /* --- АНИМАЦИЯ ПОСТОЯННО ШАГАЮЩЕГО ЧЕЛОВЕЧКА --- */
         .character-container {
-            width: 140px;
-            height: 160px;
+            width: 120px;
+            height: 140px;
             flex-shrink: 0;
             position: relative;
             overflow: hidden; 
         }
 
         @keyframes walking-character {
-            0% { 
-                transform: translateY(0px) rotate(-3deg);
-                filter: opacity(0.85);
-            }
-            50% {
-                transform: translateY(-10px) rotate(3deg);
-                filter: opacity(1);
-            }
-            100% {
-                transform: translateY(0px) rotate(-3deg);
-                filter: opacity(0.85);
-            }
+            0% { transform: translateY(0px) rotate(-3deg); filter: opacity(0.85); }
+            50% { transform: translateY(-8px) rotate(3deg); filter: opacity(1); }
+            100% { transform: translateY(0px) rotate(-3deg); filter: opacity(0.85); }
         }
 
         .svg-walker {
@@ -389,11 +384,55 @@
             transform-origin: bottom center; 
         }
 
+        /* --- ОПТИМИЗАЦИЯ ДЛЯ СМАРТФОНОВ (МЕНЬШЕ 900PX) --- */
         @media (max-width: 900px) {
-            .floating-space { height: auto; display: flex; flex-direction: column; gap: 25px; align-items: center; }
-            .card { position: static !important; transform: none !important; width: 100% !important; max-width: 360px; }
-            .footer-content { flex-direction: column; text-align: center; gap: 30px; }
+            body { padding: 25px 12px; }
+            header h1 { font-size: 2.2rem; margin-bottom: 15px; }
+            
+            .floating-space { 
+                height: auto; 
+                display: flex; 
+                flex-direction: column; 
+                gap: 20px; 
+                align-items: center; 
+            }
+            
+            .card { 
+                position: static !important; 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 400px; 
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            }
+            
+            .item-printer { background: var(--card-bg); border-color: var(--border-color); }
+            .item-printer .card-tag { color: var(--text-muted); }
+
+            .footer-content { flex-direction: column-reverse; text-align: center; gap: 20px; }
             .speech-footer { text-align: center; }
+        }
+
+        /* --- КРИТИЧЕСКАЯ ФИКСАЦИЯ ЭКРАНОВ СМАРТФОНОВ (МЕНЬШЕ 440PX) --- */
+        @media (max-width: 440px) {
+            .countdown-box {
+                gap: 6px;
+                padding: 8px 10px;
+                width: 100%;
+                max-width: 340px;
+            }
+            .countdown-unit {
+                min-width: 36px;
+            }
+            .countdown-num {
+                font-size: 1.45rem;
+            }
+            .countdown-dot {
+                font-size: 1.3rem;
+                padding-bottom: 10px;
+            }
+            .countdown-label {
+                font-size: 0.55rem;
+            }
         }
     </style>
 </head>
@@ -484,7 +523,7 @@
         <footer>
             <div class="footer-content">
                 <p class="speech-footer">
-                    Да, кстати, чуть не забыл про самое интересное: отмечать в этот раз я буду не дома, а в <strong>г. Геленджик, ул. Херсонская, 28</strong>. Так что официально приглашаю вообще каждого, кто дочитал этот свиток до конца! Единственный нюанс: увлекательный квест «как добраться до Чёрного моря» и покупка билетов полностью на вашей совести.<br><br>
+                    Да, кстати, чуть не забыл про самое интересное: отмечать в этот раз я буду не дома, а в <strong>г. Геленджик, ул. Херсонская, 29</strong>. Так что официально приглашаю вообще каждого, кто дочитал этот свиток до конца! Единственный нюанс: увлекательный квест «как добраться до Чёрного моря» и покупка билетов полностью на вашей совести.<br><br>
                     Если скооперируетесь на подарок — вы красавчики. А если приедете вообще без него... ну, одну чашку чая я вам на месте так и быть налью (но строго без сахара!).
                 </p>
                 
@@ -517,9 +556,7 @@
             <img src="" alt="" class="modal-img" id="modalImg">
             <h3 class="modal-title" id="modalTitle">Название</h3>
             <div class="modal-subtext" id="modalSubtext">Слоган</div>
-            
-            <div class="market-container" id="marketGrid">
-                </div>
+            <div class="market-container" id="marketGrid"></div>
         </div>
     </div>
 
@@ -530,34 +567,34 @@
                 links: [
                     { type: 'wb', label: 'Wildberries (Вариант 1)', url: 'https://www.wildberries.ru/catalog/526066945/detail.aspx' },
                     { type: 'wb', label: 'Wildberries (Вариант 2)', url: 'https://www.wildberries.ru/catalog/223352095/detail.aspx' },
-                    { type: 'yandex', label: 'Яндекс.Маркет', url: 'https://market.yandex.ru/card/payalnaya-stantsiya-fen-kada-kd-887-payalnyy-tsifrovoy/101785861590?do-waremd5=uXOk5SNRCyKCxtTM1wgN8Q&cpc=Y3bHpU9mrTJQUgQbLM_BRNffArFBoMOdDLDdHotfOqsAqzPJCpAA2x7VM09yRjr-uVFZ0CeCKQx5jyJ2dQP2cF9dM3yBWzykTaBhcYk-8UalcxYvcWFlMgqM1s9IKbtnwHOE5ugO6Vb2rKATmSaYv9j3KFANvjLKpAHr_CyQ0pVi1juQe-VdIAtzBjC8a3JMmTsJOXM07cFHBA4lxBiS2H6PKJWj7fxyHysin3q212by22OK7gw8YJfQNJ2bChB_7UhNLUf07goDKwhEHAjjnNXjF1nk3D0HcRLb3eTzQRUKPS6jSaL12AE3xmeuYsSUf4A-jPxhVGCQFh0hcsXoG0pZu7DU2CDpe8vFOQPr-3QKfX6ALI3TH_h-lyu2ixRko-28Am9bFnEu1bpyM1_w8qN7EdBdvj5iKh_ztDM77k1l9GxI3hz7_eE3NzMXdYTH63ArAbs1kH6PQGovgGc9aA9pEU8HaY2tHDmQlsk1N08%2C&nid=76550684&ogV=-12' }
+                    { type: 'yandex', label: 'Яндекс.Маркет', url: 'https://market.yandex.ru/card/payalnaya-stantsiya-fen-kada-kd-887-payalnyy-tsifrovoy/101785861590?do-waremd5=uXOk5SNRCyKCxtTM1wgN8Q' }
                 ]
             },
             nixie: {
                 type: 'custom-blocks',
                 blocks: [
                     {
-                        title: 'Компонент 1: Набор ламп ИН-12 (Купить что-то ОДНО на выбор!)',
+                        title: 'Компонент 1: Набор ламп ИН-12 (Что-то ОДНО на выбор!)',
                         hasOr: true,
                         links: [
-                            { type: 'ozon', label: 'Набор ламп ИН-12А на Ozon', url: 'https://www.ozon.ru/product/in-12a-4sht-k155id1-ins-1-2sht-nabor-3101618316/?at=PjtJ2EEYycx4AlKunOPZXWTW9vyg6cMGnzyQSLOXNlR&reviewsVariantMode=2' },
-                            { type: 'ozon', label: 'Набор ламп ИН-12Б на Ozon', url: 'https://www.ozon.ru/product/in-12b-4sht-ins-1-1sht-nabor-3101619816/?at=r2t4zllKLuVOmzORi1MgJ2wuB6JEBqu4qlGlVsBzk39Q' }
+                            { type: 'ozon', label: 'Набор ламп ИН-12А на Ozon', url: 'https://www.ozon.ru/product/in-12a-4sht-k155id1-ins-1-2sht-nabor-3101618316/' },
+                            { type: 'ozon', label: 'Набор ламп ИН-12Б на Ozon', url: 'https://www.ozon.ru/product/in-12b-4sht-ins-1-1sht-nabor-3101619816/' }
                         ]
                     },
                     {
-                        title: 'Компонент 2: Печатная плата AlexGyver (Купить что-то ОДНО на выбор!)',
+                        title: 'Компонент 2: Печатная плата (Что-то ОДНО на выбор!)',
                         hasOr: true,
                         links: [
                             { type: 'wb', label: 'Плата часов на Wildberries', url: 'https://www.wildberries.ru/catalog/913738766/detail.aspx' },
-                            { type: 'ozon', label: 'Плата часов на Ozon', url: 'https://www.ozon.ru/product/plata-dlya-chasov-na-gri-in-12-i-arduino-nano-avtor-alex-gyver-chernaya-3644551580/?at=r2t4zljz1hzK2PnYtznExrimrW5VRIEr6qGjhxy8lWO' }
+                            { type: 'ozon', label: 'Плата часов на Ozon', url: 'https://www.ozon.ru/product/plata-dlya-chasov-na-gri-in-12-i-arduino-nano-avtor-alex-gyver-chernaya-3644551580/' }
                         ]
                     },
                     {
-                        title: 'Компонент 3: Корпус часов (Купить что-то ОДНО на выбор!)',
+                        title: 'Компонент 3: Корпус часов (Что-то ОДНО на выбор!)',
                         hasOr: true,
                         links: [
-                            { type: 'ozon', label: 'Деревянный корпус на Ozon', url: 'https://www.ozon.ru/product/korpus-dlya-chasov-na-in-12-3064115993/?at=PjtJ2Em2ocZOY7Xlhnoz0xvS9mlllvFy124jWIpXYAoZ' },
-                            { type: 'ozon', label: 'Пластиковый корпус на Ozon', url: 'https://www.ozon.ru/product/korpus-dlya-chasov-na-in-12-3139119394/?at=oZt613G1BhrB2RxDUDxQYwKCGGWmnoI9gR1W1hK9nxmP' }
+                            { type: 'ozon', label: 'Деревянный корпус на Ozon', url: 'https://www.ozon.ru/product/korpus-dlya-chasov-na-in-12-3064115993/' },
+                            { type: 'ozon', label: 'Пластиковый корпус на Ozon', url: 'https://www.ozon.ru/product/korpus-dlya-chasov-na-in-12-3139119394/' }
                         ]
                     }
                 ]
@@ -565,22 +602,22 @@
             printer: {
                 type: 'standard',
                 links: [
-                    { type: 'yandex', label: 'Bambu Lab A1 Combo (Вариант 1 на Маркете)', url: 'https://market.yandex.ru/card/3d-printer-bambu-lab-a1-combo-versiya-eu-rabochaya-oblast---256256256mm/5688380493?do-waremd5=n6pJNPQrqmWvPN0E6MRQ2A&sponsored=1&cpc=J4-KZOvxSyhxVx3w83uDnIOWnUjvht9wwpNtsOSEGpZyiSd3__DAuoaI_ANd4UBrzkCmPouWUpq_YLEHauyFG1EbgHyvzyQFP7elVQBZ6CBK5Sq8MtVdolkGZMabByYYw3Zlud-pD5O7aANYemQ1a2x-0Zwh0Q3dZX4C-PW1iVWZ2UcWr1sHJhJD-tf4guItRhljqi5VwezzQwoT3Uu1z_UQQGgjyxQSv2__epKucBEnoY5UZ7RsawCyyw-ykoGddTeLQXG4FCaJhvbOpqhdeVghhX0msd1FC8n2og6fX1C3DhUmtnaSTqBQRKhdpz6SfUwx3osf61FAtBqNXC6IqF0ggt2h7dYykZ6WFiPQ_ZhccI8b0anb4eAam3cjz2bW6oLVs-tmzousNNTPdS6tYi2JDHd_NsHFJJxLd1IL8uU%2C&cc=CiAyNjI4OGM2ZmYyNDU3ZDA3Mzk4YjY4YmYxZDBlOWM3YhDmAYB95u0G&resale_goods=resale_new&hid=9283442&nid=27022410&show-uid=17793040711961299771906002&showUid=17793040711961299771906002&from-show-uid=17793040711961299771906002&cpa=1&from=premiumOffers' },
-                    { type: 'yandex', label: 'Bambu Lab A1 Combo (Вариант 2 на Маркете)', url: 'https://market.yandex.ru/card/3d-printer-bambu-lab-a1-combo-with-ams-yevropeyskaya-versiyapodderzhka-taymlapsa/4824572997?do-waremd5=S8OSAmYy-KimqK0X-BLlRA&sponsored=1&cpc=J4-KZOvxSyhffsY-5aXKN-CRNMKCHu7VmucZjPs_lUk5glYZ8EC0LTO9_MeKlujRHPPTIl7fthY8MjZbiTPfA3hujidY6TpziykJ7Fti-2qt_mp1L0pFfMGYejo31T5_BhmxqdRXTjs9XY6QKBnDneaZIUvIzs3U7C56LY0Oapm4rwyWQix5Xh0wK4fSUSfJ69tGsnJAH-zVmfa9L35VsX6tM0cM-uV8u1ZccMBCjMN6f0mL3TtHJXCvr7Eq5SJ4Q0QNTfNfIhBesYCaRFDii6qvbu1enNb3bkLkKS_5Pr45IWaqxNDyg6XlSL6KttDsYLr8PUD5dlzBJsAJRpYq3eDPimabvNYl81wlOQ97FIFMmasLpMeJAMsfqmxppBCj&nid=27022410&ogV=-12' }
+                    { type: 'yandex', label: 'Bambu Lab A1 Combo (Вариант 1)', url: 'https://market.yandex.ru/card/3d-printer-bambu-lab-a1-combo-versiya-eu-rabochaya-oblast---256256256mm/5688380493' },
+                    { type: 'yandex', label: 'Bambu Lab A1 Combo (Вариант 2)', url: 'https://market.yandex.ru/card/3d-printer-bambu-lab-a1-combo-with-ams-yevropeyskaya-versiyapodderzhka-taymlapsa/4824572997' }
                 ]
             },
             sport: {
                 type: 'standard',
                 links: [
-                    { type: 'ozon', label: 'Набор гантелей на Ozon', url: 'https://www.ozon.ru/product/ganteli-2704918235/?at=J8tg2Ez21uyE8XNpiNLPj8Xi1vJV12IL60J7RINNy3Z7' },
+                    { type: 'ozon', label: 'Набор гантелей на Ozon', url: 'https://www.ozon.ru/product/ganteli-2704918235/' },
                     { type: 'wb', label: 'Набор гантелей на Wildberries', url: 'https://www.wildberries.ru/catalog/232688588/detail.aspx' }
                 ]
             },
             tablet: {
                 type: 'standard',
                 links: [
-                    { type: 'avito', label: 'Samsung Galaxy Tab A8 на Avito', url: 'https://www.avito.ru/engels/planshety_i_elektronnye_knigi/samsung_galaxy_tab_a8_8097729182?context=H4sIAAAAAAAA_wFwAI__YTo0OntzOjEyOiJoYXNHZW9GaWx0ZXIiO2I6MTtzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjE7czoxMzoic2hvdWxkU2hvd0dlbyI7YjoxO3M6MToieCI7czoxNjoiSjVJRFNXNFBWWVZUc2NqbCI7fexYbu9wAAAA' },
-                    { type: 'avito', label: 'Xiaomi Redmi Pad SE на Avito', url: 'https://www.avito.ru/tolyatti/planshety_i_elektronnye_knigi/xiaomi_redmi_pad_se_8131531184?slocation=653265&context=H4sIAAAAAAAA_wFwAI__YTo0OntzOjEyOiJoYXNHZW9GaWx0ZXIiO2I6MTtzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjE7czoxMzoic2hvdWxkU2hvd0dlbyI7YjoxO3M6MToieCI7czoxNjoiWEFBNkJuTDNHWHkxSVVJTiI7faquP6RwAAAA' }
+                    { type: 'avito', label: 'Samsung Galaxy Tab A8 на Avito', url: 'https://www.avito.ru/engels/planshety_i_elektronnye_knigi/samsung_galaxy_tab_a8_8097729182' },
+                    { type: 'avito', label: 'Xiaomi Redmi Pad SE на Avito', url: 'https://www.avito.ru/tolyatti/planshety_i_elektronnye_knigi/xiaomi_redmi_pad_se_8131531184' }
                 ]
             },
             tool: {
@@ -588,22 +625,22 @@
                 blocks: [
                     {
                         title: 'Вариант 1: Циркулярная пила',
-                        links: [{ type: 'ozon', label: 'Открыть пилу на Ozon', url: 'https://www.ozon.ru/product/tsirkulyarnaya-pila-diskovaya-akkumulyatornaya-18v-2544129711/?at=mqtk7NY7AFM6OPgLCN4p9NBCPJOqk4UWl5kRVFkXN83x' }]
+                        links: [{ type: 'ozon', label: 'Открыть пилу на Ozon', url: 'https://www.ozon.ru/product/tsirkulyarnaya-pila-diskovaya-akkumulyatornaya-18v-2544129711/' }]
                     },
                     {
                         title: 'Вариант 2: Аккумуляторный лобзик',
-                        links: [{ type: 'ozon', label: 'Открыть лобзик на Ozon', url: 'https://www.ozon.ru/product/lobzik-akkumulyatornyy-mk-s-regulirovkoy-elektrolobzik-2akb-v-komplekte-1901534531/?oos_search=false&reviewsVariantMode=1' }]
+                        links: [{ type: 'ozon', label: 'Открыть лобзик на Ozon', url: 'https://www.ozon.ru/product/lobzik-akkumulyatornyy-mk-s-regulirovkoy-elektrolobzik-2akb-v-komplekte-1901534531/' }]
                     },
                     {
                         title: 'Вариант 3: Полный набор инструмента',
-                        links: [{ type: 'wb', label: 'Открыть весь набор на Wildberries', url: 'https://www.wildberries.ru/catalog/933929441/detail.aspx?size=1408213222' }]
+                        links: [{ type: 'wb', label: 'Открыть весь набор на Wildberries', url: 'https://www.wildberries.ru/catalog/933929441/detail.aspx' }]
                     }
                 ]
             },
             boat: {
                 type: 'standard',
                 links: [
-                    { type: 'ozon', label: 'Лодка Аквапро 2800МЕ на Ozon', url: 'https://www.ozon.ru/product/naduvnaya-motornaya-lodka-akvapro-2800me-pvh-zelenaya-slan-881720037/?at=PjtJ2Em2ocmmoMr8t97kE30UGL85lKsM6BgqYSlLpWWy' }
+                    { type: 'ozon', label: 'Лодка Аквапро 2800МЕ на Ozon', url: 'https://www.ozon.ru/product/naduvnaya-motornaya-lodka-akvapro-2800me-pvh-zelenaya-slan-881720037/' }
                 ]
             }
         };
@@ -621,7 +658,6 @@
                 const subtext = card.getAttribute('data-sub');
 
                 document.getElementById('modalImg').src = img;
-                document.getElementById('modalImg').alt = title;
                 document.getElementById('modalTitle').innerText = title;
                 document.getElementById('modalSubtext').innerHTML = subtext;
 
@@ -632,14 +668,11 @@
                     dataItem.blocks.forEach((block, bIndex) => {
                         const blockEl = document.createElement('div');
                         blockEl.className = 'custom-step';
-                        
                         blockEl.innerHTML = `
                             <div class="custom-step-title"><span>${bIndex + 1}</span>${block.title}</div>
                             <div class="custom-buttons-group"></div>
                         `;
-                        
                         const btnGroup = blockEl.querySelector('.custom-buttons-group');
-                        
                         block.links.forEach((link, lIndex) => {
                             if (block.hasOr && lIndex > 0) {
                                 const divider = document.createElement('div');
@@ -647,20 +680,16 @@
                                 divider.innerText = '— ИЛИ —';
                                 btnGroup.appendChild(divider);
                             }
-
                             const a = document.createElement('a');
                             a.href = link.url;
                             a.target = '_blank';
                             a.className = `custom-inner-btn tile-${link.type}`;
-                            
                             let ico = '🔗';
                             if (link.type === 'ozon') ico = '🔵';
                             if (link.type === 'wb') ico = '🟣';
-                            
                             a.innerHTML = `<span>${ico}</span><span>${link.label}</span>`;
                             btnGroup.appendChild(a);
                         });
-                        
                         marketGrid.appendChild(blockEl);
                     });
                 } else {
@@ -669,13 +698,11 @@
                         btn.href = store.url;
                         btn.target = '_blank';
                         btn.className = `market-tile tile-${store.type}`;
-                        
                         let prefix = 'SHOP';
                         if (store.type === 'yandex') prefix = 'Я.Маркет';
                         if (store.type === 'ozon') prefix = 'OZON';
                         if (store.type === 'wb') prefix = 'WB';
                         if (store.type === 'avito') prefix = 'Авито';
-
                         btn.innerHTML = `<span class="market-logo">${prefix}</span><span>${store.label}</span>`;
                         marketGrid.appendChild(btn);
                     });
@@ -687,7 +714,6 @@
                         marketGrid.appendChild(note);
                     }
                 }
-
                 overlay.classList.add('active');
                 body.classList.add('modal-open');
             });
